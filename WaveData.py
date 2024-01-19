@@ -46,15 +46,15 @@ class WaveData:
             plt.show()
         return self._validData
 
-    def PlotSpectograml(channel=0):
+    def PlotSpectogram(self,channel=0):
         if (self._validData!=0):
             # frequency spectrum, also known as a spectrogram
             plt.figure(figsize=(15, 5))
-            plt.specgram(l_channel, Fs=sample_freq, vmin=-20, vmax=50)
+            plt.specgram(self._l_channel, Fs=self._samplerate, vmin=-20, vmax=50)
             plt.title('Left Channel')
             plt.ylabel('Frequency (Hz)')
             plt.xlabel('Time (s)')
-            plt.xlim(0, t_audio)
+            plt.xlim(0, self._time_length)
             plt.colorbar()
             plt.show()
         return self._validData
